@@ -1,5 +1,7 @@
 BJWlab8::Application.routes.draw do
   
+  resources :games
+
   resources :users
 
   root :to => 'pages#home'
