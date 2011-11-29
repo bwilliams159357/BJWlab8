@@ -44,6 +44,8 @@
 #inner {
 	position: relative;
 	border-style: solid;
+	height: 800px;
+	width: 925px;
 }
 #sidebar {
 	width: 300px;
@@ -77,6 +79,73 @@
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
+}
+
+#game-info {
+	height: 800px;
+	width: 925px;
+	position: relative;
+	font-size: 12pt;
+}
+
+#signup {
+	height: 300px;
+	width: 400px;
+	font-size: 12pt;
+	position: absolute;
+	left: 275px;
+	top: 225px;
+	bottom: 0px;
+	right: 0px;
+	background-color: yellow;
+}
+
+.game-page-title {
+	height: 50px;
+	width: 200px;
+	position: absolute;
+	top: 25px;
+	left: 150px;
+	bottom: 0px;
+	right: 0px;
+	font-size: 18pt;
+	overflow: auto;
+}
+
+.game-page-image {
+	height: 150px;
+	width: 112px;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	bottom: 0px;
+	right: 0px;
+}
+
+.game-page-description {
+	height: 150px;
+	width: 500px;
+	position: absolute;
+	top: 100px;
+	left: 315px;
+	bottom: 0px;
+	right: 0px;
+	background-color: yellow;
+	font-size: 12pt;
+	overflow: auto;
+}
+
+.game-page-reviews {
+	width: 600px;
+	height: 300px;
+	position: absolute;
+	top: 400px;
+	left: 100px;
+	right: 100px;
+	bottom 0px;
+	overflow: auto;
+	font-size: 12pt;
+	background-color: lime;
 }
 
 #footer {
@@ -210,6 +279,7 @@
 	text-align:center;
 	font-size: large;
 	font-weight: bold;
+	overflow: auto;
 }
 .sidebar-rating {
 	height:50px;
