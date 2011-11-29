@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
   
   def cpanel
-    @title = "Control Panel"
+    @title = "Control Panel - Profile"
   end
   
   def gpage
@@ -13,5 +13,13 @@ class PagesController < ApplicationController
   
   def pagesearch
     @title = "Search"
+  end
+  
+  def friends
+    @title = "Control Panel - Friends List"
+  end
+  
+  def collections
+    @title = "Control Panel - Collections"
   end
 end
