@@ -1,12 +1,23 @@
 BJWlab8::Application.routes.draw do
-  get "pages/home"
-  get "pages/cpanel"
-  get "pages/gpage"
-  get "pages/gamesearch"
-  post "pages/gamesearch"
-  get "pages/signup"
-  get "pages/collections"
-  get "pages/friends"
+  
+  root :to => 'pages#home'
+  match '/home', :to => 'pages#home'
+  match '/controlpanel', :to => 'pages#cpanel'
+  match '/search', :to => 'pages#gamesearch'
+  match '/signup', :to => 'pages#signup'
+  match '/collections', :to => 'pages#collections'
+  match '/friends', :to => 'pages#friends'
+  match '/gpage', :to => 'pages#gpage'
+  
+  #get "pages/home"
+  #get "pages/cpanel"
+  #get "pages/gpage"
+  #get "pages/gamesearch"
+  #post "pages/gamesearch"
+  #get "pages/signup"
+  #get "pages/collections"
+  #get "pages/friends"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
