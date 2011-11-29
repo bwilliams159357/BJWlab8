@@ -1,5 +1,7 @@
 BJWlab8::Application.routes.draw do
   
+  resources :users
+
   root :to => 'pages#home'
   match '/home', :to => 'pages#home'
   match '/controlpanel', :to => 'pages#cpanel'

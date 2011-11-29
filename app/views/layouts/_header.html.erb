@@ -1,6 +1,6 @@
 <div id="banner">
-   <%= link_to image_tag("logo.png", :id => "logo", :alt => "Missing Logo"), 'home' %>
-   <div id="users"><a href="" title="Links to user listing">Users</a></div>
+   <%= link_to image_tag("logo.png", :id => "logo", :alt => "Missing Logo"), :root %>
+   <div id="users"><%= link_to "Users", '/users' %></div>
    <div id="search">
    <form id="searchform" method="post" action="search">
       <input type="text" size="20" maxlength="50" />
@@ -8,7 +8,7 @@
    </form>
    </div>
    <div id="login">
-      <%= link_to "Register", "signup" %>
+      <%= link_to "Register", "users/new" %>
       <label>Username: <input type="text" size="15" maxlength="25" name="username" /></label>
       <label>Password: <input type="password" size="10" maxlength="20" name="pass" /></label>
       <input type="submit" name="logon" value="LOGIN" />
