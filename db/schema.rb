@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20111210013336) do
     t.integer  "num_ratings"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "description"
+    t.string   "description",   :limit => 2000
   end
 
   create_table "users", :force => true do |t|

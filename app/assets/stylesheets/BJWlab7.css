@@ -46,6 +46,7 @@
 	border-style: solid;
 	height: 800px;
 	width: 925px;
+	overflow: auto;
 }
 #sidebar {
 	width: 300px;
