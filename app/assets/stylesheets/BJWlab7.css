@@ -101,7 +101,7 @@
 
 .game-page-title {
 	height: 50px;
-	width: 200px;
+	width: 600px;
 	position: absolute;
 	top: 25px;
 	left: 150px;
@@ -129,9 +129,9 @@
 	left: 315px;
 	bottom: 0px;
 	right: 0px;
-	background-color: yellow;
 	font-size: 12pt;
 	overflow: auto;
+	border: double;
 }
 
 .game-page-reviews {

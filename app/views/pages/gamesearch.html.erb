@@ -1,17 +1,12 @@
 <table>
-	<tr>
-		<td><%= link_to "SomeGameNameA", 'gpage' %></td>
+	<% 
+	   search_condition = "%" + params[:q] + "%"
+       @games = Game.find(:all, :conditions => ['name LIKE ?', search_condition])
+       @games.sort! { |a,b| a.name.downcase <=> b.name.downcase }
+    %>
+    <% @games.each do |game| %>
+    <tr>
+		<td><%= link_to "#{game.name}", gpage_path(:param1 => game) %></td>
 	</tr>
-	<tr>
-		<td><%= link_to "SomeGameNameB", 'gpage' %></td>
-	</tr>
-	<tr>
-		<td><%= link_to "SomeGameNameC", 'gpage' %></td>
-	</tr>
-	<tr>
-		<td><%= link_to "SomeGameNameD", 'gpage' %></td>
-	</tr>
-	<tr>
-		<td><%= link_to "SomeGameNameE", 'gpage' %></td>
-	</tr>
+	<% end %>
 </table>

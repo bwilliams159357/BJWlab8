@@ -1,7 +1,20 @@
 <div id="game-info">
-	<div class="game-page-title">Game Title</div>
-	<%= image_tag("none.jpg", :alt => "No Image", :class => "game-page-image") %>
-	<div class="game-page-description">Some description about the game or whatever.</div>
+	<% if !params[:param1].nil?
+	     @game = Game.find_by_id(params[:param1])
+	   end
+	%>
+	<div class="game-page-title"><%= if !@game.nil?
+		                               @pic = @game.image
+		                               @desc = @game.description
+		                               @game.name
+		                             else
+		                             	@pic = "none.jpg"
+		                             	@desc = "No description available."
+		                               "Game Title Here"	
+		                             end 
+		                         %></div>
+	<%= image_tag(@pic, :alt => "No Image", :class => "game-page-image") %>
+	<div class="game-page-description"><%= @desc %></div>
 	<div class="game-page-reviews">
 		<%= link_to "Some title of review", '#' %> Username<br/>
 		<%= link_to "Some title of review", '#' %> Username<br/>

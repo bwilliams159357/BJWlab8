@@ -15,7 +15,12 @@ class PagesController < ApplicationController
     @title = "Game Page"
   end
   
-  def pagesearch
+  def gamesearch
+    if params["search"].nil?
+      @search = params["search"]
+    else
+      @search = ""
+    end
     @title = "Search"
   end
   

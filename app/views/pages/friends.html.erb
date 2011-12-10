@@ -4,4 +4,11 @@
 	<%= link_to "Collections", 'collections' %>
 </div>
 <div id="cp-user-info">
+	<center>
+    <% @friends = Friend.find_by_id(current_user.id) %>
+    <% @friends.each do |friend| %>
+    <% @use = User.find_by_id(friend) %>
+    	<p><%= @use.email %></p>
+    <% end %>
+	</center>
 </div>
