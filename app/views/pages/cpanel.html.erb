@@ -10,14 +10,14 @@
 			<th colspan="2">User Profile</th>
 		</tr>
 		<tr>
-			<td>Name:</td>
-			<td><%= current_user.email %></td>
-		</tr>
-		<tr>
-			<td>Email:</td>
+			<td>Username:</td>
 			<td><%= current_user.email %></td>
 		</tr>
 	</table>
-	<%= link_to "Edit", '#' %>
+	<% if !current_user.nil? && current_user.email == "admin@admin.com" %>
+	<%= link_to "User List", "/users" %><br/>
+	<%= link_to "Game List", "/games" %><br/>
+	<%= link_to "Add Game", "/games/new" %><br/>
+	<% end %>
 	</center>
 </div>
