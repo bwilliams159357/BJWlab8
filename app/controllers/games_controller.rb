@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    if !current_user.nil? && current_user.email == "admin@admin.com"
+    if !current_user.nil? && current_user.admin
       @games = Game.all
 
       respond_to do |format|
@@ -17,7 +17,7 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
-    if !current_user.nil? && current_user.email == "admin@admin.com"
+    if !current_user.nil? && current_user.admin
       @game = Game.find(params[:id])
 
       respond_to do |format|
@@ -32,7 +32,7 @@ class GamesController < ApplicationController
   # GET /games/new
   # GET /games/new.json
   def new
-    if !current_user.nil? && current_user.email == "admin@admin.com"
+    if !current_user.nil? && current_user.admin
       @game = Game.new
 
       respond_to do |format|
@@ -46,7 +46,7 @@ class GamesController < ApplicationController
 
   # GET /games/1/edit
   def edit
-    if !current_user.nil? && current_user.email == "admin@admin.com"
+    if !current_user.nil? && current_user.admin
       @game = Game.find(params[:id])
     else
       redirect_to root_path
@@ -56,7 +56,7 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    if !current_user.nil? && current_user.email == "admin@admin.com"
+    if !current_user.nil? && current_user.admin
       @game = Game.new(params[:game])
 
       respond_to do |format|
@@ -76,7 +76,7 @@ class GamesController < ApplicationController
   # PUT /games/1
   # PUT /games/1.json
   def update
-    if !current_user.nil? && current_user.email == "admin@admin.com"
+    if !current_user.nil? && current_user.admin
       @game = Game.find(params[:id])
 
       respond_to do |format|
@@ -96,7 +96,7 @@ class GamesController < ApplicationController
   # DELETE /games/1
   # DELETE /games/1.json
   def destroy
-    if !current_user.nil? && current_user.email == "admin@admin.com"
+    if !current_user.nil? && current_user.admin
       @game = Game.find(params[:id])
       @game.destroy
 
