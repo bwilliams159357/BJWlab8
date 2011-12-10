@@ -4,7 +4,11 @@ class PagesController < ApplicationController
   end
   
   def cpanel
-    @title = "Control Panel - Profile"
+    if current_user.nil?
+      redirect_to root_path
+    else
+      @title = "#{current_user.email} - Control Panel - Profile"
+    end
   end
   
   def gpage
@@ -16,10 +20,18 @@ class PagesController < ApplicationController
   end
   
   def friends
-    @title = "Control Panel - Friends List"
+    if current_user.nil?
+      redirect_to root_path
+    else
+      @title = "#{current_user.email} - Control Panel - Friends List"
+    end
   end
   
   def collections
-    @title = "Control Panel - Collections"
+    if current_user.nil?
+      redirect_to root_path
+    else
+      @title = "#{current_user.email} - Control Panel - Collections"
+    end
   end
 end

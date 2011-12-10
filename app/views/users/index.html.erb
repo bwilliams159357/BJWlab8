@@ -3,19 +3,18 @@
 <table>
   <tr>
     <th>Email</th>
-    <th>Password</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.email %></td>
-    <td><%= user.password %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= user.email unless user.email == "admin@admin.com" %></td>
+    <td><%= link_to 'Show', user unless user.email == "admin@admin.com" %></td>
+    <% if !current_user.nil? && current_user.email == "admin@admin.com" %>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

@@ -1,14 +1,16 @@
 BJWlab8::Application.routes.draw do
   
   resources :games
-
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
 
   root :to => 'pages#home'
   match '/home', :to => 'pages#home'
   match '/controlpanel', :to => 'pages#cpanel'
   match '/search', :to => 'pages#gamesearch'
-  match '/signup', :to => 'pages#signup'
+  match '/signup', :to => 'users#new'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
   match '/collections', :to => 'pages#collections'
   match '/friends', :to => 'pages#friends'
   match '/gpage', :to => 'pages#gpage'

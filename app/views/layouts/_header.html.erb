@@ -9,8 +9,12 @@
    </div>
    <div id="login">
       <%= link_to "Register", "users/new" %>
-      <label>Username: <input type="text" size="15" maxlength="25" name="username" /></label>
-      <label>Password: <input type="password" size="10" maxlength="20" name="pass" /></label>
-      <input type="submit" name="logon" value="LOGIN" />
+      <%= 
+      if current_user.nil?
+      	link_to "Sign In", "/signin"
+      else
+        link_to "Sign Out", "/signout"
+      end
+      %>
    </div>
 </div>

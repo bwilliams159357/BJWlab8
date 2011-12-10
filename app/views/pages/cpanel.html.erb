@@ -1,5 +1,5 @@
 <div id="cp-sidebar">
-	<%= link_to "Profile", 'cpanel' %><br/>
+	<%= link_to "Profile", 'controlpanel' %><br/>
 	<%= link_to "Friends", 'friends' %><br/>
 	<%= link_to "Collections", 'collections' %>
 </div>
@@ -11,15 +11,11 @@
 		</tr>
 		<tr>
 			<td>Name:</td>
-			<td>Some Body</td>
+			<td><%= current_user.email %></td>
 		</tr>
 		<tr>
 			<td>Email:</td>
-			<td>somebody@somewhere.com</td>
-		</tr>
-		<tr>
-			<td>Username:</td>
-			<td>somebody@somewhere.com</td>
+			<td><%= current_user.email %></td>
 		</tr>
 	</table>
 	<%= link_to "Edit", '#' %>
