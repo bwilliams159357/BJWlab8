@@ -9,7 +9,7 @@
 <table>
 	<%
 		@check = false
-		@friends = Friend.find(:all, :conditions => ['user_id LIKE ?', @user.id])
+		@friends = Friends.find(:all, :conditions => ['user_id LIKE ?', @user.id])
 		if @friends.any?
 			@friends.each do |friend|
 				if !current_user.nil? && friend.friend_id == current_user.id
@@ -19,7 +19,7 @@
 		end
 	%>
 	<% if @user.view || @check %>
-		<% @coll = Collection.find(:all, :conditions => ['user_id LIKE ?', @user.id]) %>
+		<% @coll = Collections.find(:all, :conditions => ['user_id LIKE ?', @user.id]) %>
 		<% if @coll.any? %>
 		<% @coll.sort! { |a,b| a.name.downcase <=> b.name.downcase } %>
 		  <% @coll.each do |game| %>
