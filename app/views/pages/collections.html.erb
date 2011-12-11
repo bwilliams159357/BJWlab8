@@ -4,7 +4,7 @@
 	<%= link_to "Collections", 'collections' %>
 </div>
 <div id="cp-user-info">
-	<% @coll = Collections.find(:all, :conditions => ['user_id LIKE ?', current_user.id]) %>
+	<% @coll = Collection.find(:all, :conditions => ['user_id LIKE ?', current_user.id]) %>
 	<% if @coll.any? %>
 	<% @coll.sort! { |a,b| a.name.downcase <=> b.name.downcase } %>
 	  <center>

@@ -11,13 +11,15 @@
     <% end %>
     <table>
     <% @friends = Friends.find(:all, :conditions => ['user_id LIKE ?', current_user.id]) %>
-    <% @friends.each do |friend| %>
-    <% @use = User.find_by_id(friend.friend_id) %>
-    	<tr>
-    	<td width="300"><%= link_to @use.email, @use %></td>
-    	<td><%= link_to "Remove", friends_path(:remove => @use.id) %></td>
-    	</tr>
-    <% end %>
+    <% if @friends.any? %>
+	    <% @friends.each do |friend| %>
+	    <% @use = User.find_by_id(friend.friend_id) %>
+	    	<tr>
+	    	<td width="300"><%= link_to @use.email, @use %></td>
+	    	<td><%= link_to "Remove", friends_path(:remove => @use.id) %></td>
+	    	</tr>
+	    <% end %>
+	<% end %>
     </table>
 	</center>
 </div>
