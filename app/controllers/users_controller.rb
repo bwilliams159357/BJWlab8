@@ -45,6 +45,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    redirect_to root_path
     @user = User.find(params[:id])
   end
 

@@ -1,8 +1,9 @@
 BJWlab8::Application.routes.draw do
-  
   resources :games
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :friends, :only => [:new, :create, :destroy]
+  resources :collections, :only => [:new, :create, :destroy]
 
   root :to => 'pages#home'
   match '/home', :to => 'pages#home'

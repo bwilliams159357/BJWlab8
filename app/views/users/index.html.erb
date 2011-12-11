@@ -11,9 +11,10 @@
   <tr>
     <td><%= user.email unless user.admin %></td>
     <td><%= link_to 'Show', user unless user.admin %></td>
-    <% if !current_user.nil? && current_user.admin %>
-      <td><%= link_to 'Edit', edit_user_path(user) unless user.admin%></td>
-      <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete unless user.admin %></td>
+    <% if !current_user.nil? %>
+      <% if current_user.admin %>
+        <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete unless user.admin%></td>
+      <% end %>
     <% end %>
   </tr>
 <% end %>

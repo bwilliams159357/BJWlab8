@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111210222146) do
+ActiveRecord::Schema.define(:version => 20111211025206) do
+
+  create_table "collections", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  create_table "friends", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "games", :force => true do |t|
     t.string   "name"
@@ -23,6 +38,15 @@ ActiveRecord::Schema.define(:version => 20111210222146) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "description",   :limit => 2000
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "reviews", :force => true do |t|
@@ -41,8 +65,8 @@ ActiveRecord::Schema.define(:version => 20111210222146) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
-    t.boolean  "view"
-    t.boolean  "admin",              :default => false
+    t.boolean  "admin"
+    t.boolean  "view",               :default => true
   end
 
 end
