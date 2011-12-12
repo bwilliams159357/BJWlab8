@@ -14,18 +14,6 @@
 			<td><%= current_user.email %></td>
 		</tr>
 	</table>
-	<%
-		@friends = Friends.find(:all, :conditions => ['user_id LIKE ?', current_user.id])
-		if @friends.any?
-			@friends.each do |friend| %>
-			<% 
-			   @fr = User.find(friend.friend_id)
-		    %>
-		    <%= @fr.email %><br/>
-				
-			<% end
-		end
-	%>
 	<% if !current_user.nil? && current_user.admin %>
 	<%= link_to "User List", "/users" %><br/>
 	<%= link_to "Game List", "/games" %><br/>
